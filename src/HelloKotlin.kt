@@ -1,13 +1,12 @@
 fun main(args: Array<String>) {
-    var original = arrayOf(1, 2, 3, 4, 5)
-    var copy = Array(original.size){0}
-
-    for((idx, i) in original.withIndex()) {
-        copy[idx] = i
-    }
-
-    for(v in copy) {
-        println("$v ")
+    for (i in 1 .. 15) {
+        var result = when {
+            (i % 3 === 0) && (i % 5 === 0) -> "FizzBuzz"
+            (i % 3 === 0) -> "Fizz"
+            (i % 5 === 0) -> "Buzz"
+            else -> i
+        }
+        println(result)
     }
 
 
