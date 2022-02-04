@@ -1,15 +1,13 @@
-fun multipleLamdaFunc(lambda1: () -> Unit, lambda2: (Int) -> Unit, lambda3: (String, String) -> String) {
-    lambda1()
-    lambda2(100)
-    println(lambda3("Hello", "World"))
+fun outerFunc(target: String): String {
+    fun localFunc(str: String): String {
+        return "Hello from local $str"
+    }
+    return localFunc(target)
 }
 
 fun main(args: Array<String>) {
-    multipleLamdaFunc(
-        {println("from lambda1")},
-        {println("from lambda2 $it")},
-        {str1, str2 -> "$str1 $str2"},
-    )
+    var result = outerFunc("Clara")
+    println(result)
 }
 
 
