@@ -1,11 +1,14 @@
 package mypackage
 
-val MY_CONSTANT = 1234
+fun square(x: Int) = x * x
+fun square(x: Long) = x * x
+fun square(x: Float) = x * x
+fun square(x: Double) = x * x
 
-fun sayHello(to: String) = println("Hello $to")
-
-class MyClass {
-    fun print() {
-        println("print")
-    }
+fun main(args: Array<String>) {
+    println(square(2))
+    println(square(3L))
+    println(square(4.0F))
+    println(square(5.0))
 }
+
