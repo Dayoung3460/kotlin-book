@@ -1,27 +1,39 @@
 package mypackage
 
-import kotlin.random.Random
-
-fun excludeChar(word: String, array: Array<Char>): String {
-    var result = ""
-
-    for(w in word) {
-        if(w in array) {
-            continue
-        }
-        result += w
-    }
-    return result
+class Person {
+    var name: String = "m"
+    var age: Int = 0
 }
 
+class Person2 (val name: String, var age: Int, val gender: String) {
 
+}
+class Spy1(realName: String, realAge: Int, realGender: String) {
+    var fakeName: String
+    var fakeAge: Int
+    var fakeGender: String
 
+    init {
+        fakeName = realName.reversed()
+        fakeAge = realAge * 2
+        fakeGender = if(realGender == "male") "female" else "male"
+    }
+}
+
+class Person4(val gender: String, val name: String = "m", var age: Int = 20) {}
 
 fun main(args: Array<String>) {
-    var str1 = excludeChar("Hello", arrayOf('H', 'l'))
-    println(str1)
-    var str2 = excludeChar("Hello World", arrayOf('H', 'W', 'o'))
-    println(str2)
+    var spy1 = Spy1("kt", 20, "male")
+    var spy2 = Spy1("lt", 30, "female")
+    println("${spy1.fakeName}, ${spy1.fakeAge}, ${spy1.fakeGender}")
+    println("${spy2.fakeName}, ${spy2.fakeAge}, ${spy2.fakeGender}")
+
+    var p4 = Person4("male")
+    println("${p4.name}, ${p4.age}")
+    p4 = Person4("female", "l", 15)
+    p4 = Person4("male", age = 30)
+    println("${p4.name} ${p4.age}")
+
 }
 
 
