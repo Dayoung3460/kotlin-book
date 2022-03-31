@@ -78,8 +78,13 @@ fun main(args: Array<String>) {
     p5 = Person5("Lee", 30, "female", "doctor", 20000)
 //    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
 
-    ConstructorCallOrderDemo(1, 2, 3)
+//    ConstructorCallOrderDemo(1, 2, 3)
 
+    var p51 = Person5(name="cheolsu", age=20, gender = "male", job = "programmer")
+    var p52 = Person5(job = "programmer", gender = "male", age=20, name="cheolsu")
+    var p53 = Person5("cheolsu", 20, job = "programmer", gender = "male")
+    // not matching with arguments order and not using argument's name
+//    var p55 = Person5(gender = "male", job = "programmer", "cheolsu", 20)
 }
 
 
