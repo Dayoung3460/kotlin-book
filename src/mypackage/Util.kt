@@ -39,18 +39,29 @@ class Person5(var name: String, var age: Int, val gender: String) {
     }
 }
 
+
+
 fun main(args: Array<String>) {
     var spy1 = Spy1("kt", 20, "male")
     var spy2 = Spy1("lt", 30, "female")
-    println("${spy1.fakeName}, ${spy1.fakeAge}, ${spy1.fakeGender}")
-    println("${spy2.fakeName}, ${spy2.fakeAge}, ${spy2.fakeGender}")
+//    println("${spy1.fakeName}, ${spy1.fakeAge}, ${spy1.fakeGender}")
+//    println("${spy2.fakeName}, ${spy2.fakeAge}, ${spy2.fakeGender}")
 
     var p4 = Person4("male")
-    println("${p4.name}, ${p4.age}")
+//    println("${p4.name}, ${p4.age}")
     p4 = Person4("female", "l", 15)
     p4 = Person4("male", age = 30)
-    println("${p4.name} ${p4.age}")
+//    println("${p4.name} ${p4.age}")
 
+//    making object from main constructor
+    var p5 = Person5("Kim", 20, "male")
+    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
+
+    p5 = Person5("Lee", 30, "female", "doctor")
+    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
+
+    p5 = Person5("Lee", 30, "female", "doctor", 20000)
+    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
 }
 
 
