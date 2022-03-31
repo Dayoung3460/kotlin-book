@@ -39,6 +39,21 @@ class Person5(var name: String, var age: Int, val gender: String) {
     }
 }
 
+class ConstructorCallOrderDemo(a: Int) {
+    // init block proceeds after assigning main constructor
+    init {
+        println("init")
+    }
+
+    // sub constructor proceeds after init block proceeds
+    constructor(a: Int, b: Int): this(a) {
+        println("constructor(a: Int, b: Int)")
+    }
+
+    constructor(a: Int, b: Int, c: Int): this(a, b) {
+        println("constructor(a: Int, b: Int, c: Int)")
+    }
+}
 
 
 fun main(args: Array<String>) {
@@ -55,13 +70,16 @@ fun main(args: Array<String>) {
 
 //    making object from main constructor
     var p5 = Person5("Kim", 20, "male")
-    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
+//    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
 
     p5 = Person5("Lee", 30, "female", "doctor")
-    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
+//    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
 
     p5 = Person5("Lee", 30, "female", "doctor", 20000)
-    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
+//    println("${p5.name} ${p5.age} ${p5.gender} ${p5.job} ${p5.salary}")
+
+    ConstructorCallOrderDemo(1, 2, 3)
+
 }
 
 
