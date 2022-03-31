@@ -22,6 +22,23 @@ class Spy1(realName: String, realAge: Int, realGender: String) {
 
 class Person4(val gender: String, val name: String = "m", var age: Int = 20) {}
 
+// [1] main constructor
+class Person5(var name: String, var age: Int, val gender: String) {
+    var job: String = "Unknown"
+    var salary: Int? = null
+
+//    [2] sub constructor. call main constructor using 'this' keyword.
+    constructor(name: String, age: Int, gender: String, job: String): this(name, age, gender) {
+        println("from constructor(name: String, age: Int, gender: String, job: String")
+        this.job = job
+    }
+//    [3] another sub constructor. call first sub constructor using 'this'
+    constructor(name: String, age: Int, gender: String, job: String, salary: Int): this(name, age, gender, job) {
+        println("from constructor(name: String, age: Int, gender: String, job: String, salary: int")
+        this.salary = salary
+    }
+}
+
 fun main(args: Array<String>) {
     var spy1 = Spy1("kt", 20, "male")
     var spy2 = Spy1("lt", 30, "female")
