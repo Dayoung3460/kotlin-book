@@ -55,6 +55,8 @@ class ConstructorCallOrderDemo(a: Int) {
     }
 }
 
+//class Person6(var name: String, var age: Int, var gender: String, var job: String = "Unknown", var salary: Int? = null)()
+
 
 fun main(args: Array<String>) {
     var spy1 = Spy1("kt", 20, "male")
