@@ -16,8 +16,19 @@ class Employee(name: String, age: Int, gender: String, var company: String, var 
   }
 }
 
-open class Parent(var parentProp: Int){}
-class Child(prop: Int, var childProp: Int): Parent(prop) {}
+open class Parent(var parentProp: Int){
+  fun parentFunc() {
+    println("from parentFunc")
+  }
+}
+class Child(prop: Int, var childProp: Int): Parent(prop) {
+  fun childFunc() {
+    println("${super.parentProp}")
+    println("${parentProp}")
+    super.parentFunc()
+    parentFunc()
+  }
+}
 
 fun main() {
   var p = Parent(100)
