@@ -1,3 +1,5 @@
+package classStudy_part1
+
 class ThisReferenceDemoClass {
     var prop: Int
 
