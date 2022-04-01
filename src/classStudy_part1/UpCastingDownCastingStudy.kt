@@ -21,6 +21,21 @@ fun main() {
 
   println(shape2.calculateArea())
   println(shape2.calculateArea())
+
+  var strToAny: Any = " Hello"
+  if(strToAny is String) {
+    var s = strToAny as String
+    println(s.trim())
+    println(strToAny.trim())
+  }
+
+  var data: Any = "String"
+  var result: Any? = when(data) {
+    is String -> data.toLowerCase()
+    is Int -> data.inc()
+    else -> null
+  }
+  println(result)
 }
 
 
