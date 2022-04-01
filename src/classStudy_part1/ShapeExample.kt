@@ -34,4 +34,7 @@ fun main() {
   var c = Circle(10.0)
   println(c.calculateArea())
   println(c.calculatePerimeter())
+
+  println(r is Shape)
+  println(c is Shape)
 }
