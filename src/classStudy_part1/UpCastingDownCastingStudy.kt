@@ -36,6 +36,11 @@ fun main() {
     else -> null
   }
   println(result)
+
+  var value: Any = "String"
+//  var intValue1 = value as Int
+  var intValue2 = value as? Int
+  println(intValue2)
 }
 
 
