@@ -2,9 +2,14 @@ package classStudy_part2
 
 data class Person(var name: String, var age: Int)
 data class PersonForShallowCopy(var name: String, var age: Int, var favorites: MutableList<String>)
+data class Person2(var name: String, var age: Int) {
+  var job: String = "Unknown"
+}
 
 fun main() {
   var p1 = Person("kim", 20)
+  var p2 = Person("lee", 21)
+  var p3 = Person("park", 22)
   var personToString = p1.toString()
   println(personToString)
   println(p1)
@@ -62,7 +67,24 @@ fun main() {
   var personTriple = Triple("park", 30, "cop")
   var (tripleName, tripleAge, tripleJob) = personTriple
 
+  println("-----------------------")
 
+  println(p1.hashCode())
+  println(p2.hashCode())
+  println(p3.hashCode())
+
+  println("-----------------------")
+
+  var pe1 = Person2("kim", 30)
+  var pe2 = Person2("kim", 30)
+
+  println(pe1)
+  pe1.job = "governor"
+  pe2.job = "staff"
+
+  println(pe1 == pe2)
+  var pe4 = pe1.copy()
+  println(pe4.job)
 
 
 
