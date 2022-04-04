@@ -49,4 +49,45 @@ fun main() {
   println(p.favorites === copied.favorites)
   println("p: $p")
   println("copied: $copied")
+
+  println("-----------------------")
+
+  println(p1.component1())
+  println(p1.component2())
+
+  var (p1Name, p1Age) = p1
+
+  var personPair = Pair("lee", 30)
+  var (pairName, pairAge) = personPair
+  var personTriple = Triple("park", 30, "cop")
+  var (tripleName, tripleAge, tripleJob) = personTriple
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
