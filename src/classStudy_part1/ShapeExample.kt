@@ -15,7 +15,7 @@ class Rectangle(var width: Double, var height: Double): Shape {
   }
 }
 
-class Circle(var radius: Double): Shape {
+open class Circle(var radius: Double): Shape {
   override fun calculateArea(): Double {
     return Math.PI * (radius * radius)
   }
