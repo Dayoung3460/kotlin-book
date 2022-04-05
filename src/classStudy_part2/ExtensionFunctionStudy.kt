@@ -10,6 +10,22 @@ fun String.sayHelloTo(to: String, times: Int) {
   }
 }
 
+class ExtensionFunctionClass(var x: Int, private var y: String) {
+  fun func() {
+    println("function inside class")
+  }
+
+  private fun privateFunc() {
+    println("private function inside class")
+  }
+}
+
+fun ExtensionFunctionClass.myFunction() {
+  println("from extended function")
+  func()
+  println(x)
+}
+
 fun main() {
   var spaceRemoved = " H ell o".removeAllSpace()
   println(spaceRemoved)
