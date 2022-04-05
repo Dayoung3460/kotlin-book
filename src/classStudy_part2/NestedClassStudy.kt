@@ -44,6 +44,17 @@ class Outer3(var x: Int) {
   }
 }
 
+class Outer4 {
+  interface InnerInterface {
+    fun innerFunction()
+  }
+  class MyClass: Outer4.InnerInterface {
+    override fun innerFunction() {
+      println("my implemented inner function")
+    }
+  }
+}
+
 fun main() {
   var outer1 = Outer(10)
   var inner1 = Outer.Inner(20)
