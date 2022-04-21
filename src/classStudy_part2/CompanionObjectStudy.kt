@@ -7,6 +7,7 @@ class CompanionObjectClass(var x: Int) {
 
   companion object {
     var classVariable: Int = 100
+    // const val: 컴파일 시간에 결정되는 상수, 함수나 클래스의 생성자에 할당 될 수 없음. 오직 문자열이나 기본 자료형으로만 할당 / val은 런타임에 할당됨
     const val CLASS_CONSTANT: Int = 200
 
     fun classFunc() {
@@ -18,6 +19,7 @@ class CompanionObjectClass(var x: Int) {
 }
 
 class Product(val name: String, val price: Double, var discountRate: Double) {
+  // 멤버 구성. 클래스 내부에 정의됨. 클래스 이름만으로도 참조 접근가능. 클래스 내 한개까지만 쓸 수 있음.
   companion object {
     fun calculatePrice(product: Product): Double {
       return product.price - (product.price * product.discountRate)
