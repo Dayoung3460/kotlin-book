@@ -15,6 +15,7 @@ fun main() {
   println("---------------------------------")
 
   var nowWithTime = LocalDate.now()
+
   val month = nowWithTime.month.toString().lowercase().capitalize()
   val dateFinal = "${month} ${nowWithTime.dayOfMonth}"
 //  var nowWithTime = LocalDateTime.now()
