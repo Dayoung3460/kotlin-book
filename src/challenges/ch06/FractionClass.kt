@@ -50,8 +50,8 @@ fun main() {
   var f1 = Fraction(3, 4)
   var f2 = Fraction(1, 10)
 //
-//  println(f1)
-//  println(f2)
+  println(f1)
+  println(f2)
 //
   var f3 = Fraction(3, 4)
 //  println(f3.toDouble())
