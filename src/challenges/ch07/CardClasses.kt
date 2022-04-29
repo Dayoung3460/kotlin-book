@@ -19,6 +19,16 @@ class Card(val cardSuit: CardSuit, val cardNum: Int) {
   }
 }
 
+class InvalidCardNumber(message: String = "wrong card number. should be 1 to 13"): Exception(message)
+
+class CardWithException(val suit: CardSuit, var num: Int) {
+  init {
+    if(num !in 1 .. 13) {
+      throw InvalidCardNumber()
+    }
+  }
+}
+
 fun main() {
   var card1 = Card(CardSuit.SPADE, 1)
   var card2 = Card(CardSuit.DIAMOND, 2)
@@ -29,4 +39,6 @@ fun main() {
   println(card2)
   println(card3)
   println(card4)
+
+  var invalid = CardWithException(CardSuit.SPADE, 10)
 }
