@@ -1,0 +1,87 @@
+package collectionStudy
+
+data class Person(var name: String, var gender: String, var age: Int)
+data class Account(val id: String, var person: Person)
+data class Product(var name: String, var price: Double, var discountRate: Double)
+
+var personList = listOf(
+  Person("kim", "male", 25),
+  Person("lee", "female", 30),
+  Person("park", "male", 35),
+  Person("yoon", "female", 28),
+  Person("kimha", "female", 18),
+)
+
+var accountList = listOf(
+  Account("chulsoo", Person("kim", "male", 25)),
+  Account("hee0", Person("lee", "female", 30)),
+  Account("ho_park", Person("park", "male", 35)),
+  Account("suyoung1004", Person("yoon", "female", 28)),
+  Account("khana", Person("kimha", "female", 18)),
+)
+
+var productList = listOf(
+  Product("ramen", 500.0, 0.3),
+  Product("donut", 800.0, 0.0),
+  Product("drink", 1300.0, 0.1),
+  Product("better drink", 1900.0, 0.2),
+  Product("egg", 3500.0, 0.0),
+)
+
+fun main() {
+  personList.forEach {
+    println(it.name)
+  }
+
+  productList.forEachIndexed {
+    idx, product ->
+    println("$idx: $product")
+  }
+
+  println()
+
+  var discountProduct = productList.map { it.name }
+  println(discountProduct)
+
+  var discountPrices = productList.map{ it.price - (it.discountRate * it.price) }
+  println(discountPrices)
+
+  var discountProductNameAndPrices = productList.map{ Pair(it.name, it.price - (it.discountRate * it.price)) }
+  println(discountProductNameAndPrices)
+
+  println()
+
+  var keys = mapOf("key1" to 1, "key2" to 2).map { it.key }
+  println(keys)
+
+  println()
+
+  var filtered1 = personList.filter {
+    it.age in 20 .. 29
+  }
+  println(filtered1)
+
+  var filtered2 = personList.filter {
+    it.name.startsWith("kim")
+  }
+  println(filtered2)
+
+  var filtered3 = personList.filter {
+    it.gender == "female"
+  }
+  println(filtered3)
+
+  var noDiscountProducts = productList.filter {
+    it.discountRate == 0.0
+  }
+  println(noDiscountProducts)
+
+  println()
+
+  var oneToTen = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+  var partitioned = oneToTen.partition { (it%2) == 0 }
+  println("partitioned.first ${partitioned.first}")
+  println("partitioned.second ${partitioned.second}")
+
+  println()
+}
