@@ -84,4 +84,24 @@ fun main() {
   println("partitioned.second ${partitioned.second}")
 
   println()
+
+  var oneToTen2 = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+  var reduced1 = oneToTen2.reduce {
+    acc,  num ->
+    println("acc: $acc, num: $num")
+    acc + num
+  }
+  println("reduced1: $reduced1")
+
+  println()
+
+  var strings = listOf("Hello", "World", "Kotlin")
+  var reduced2 = strings.reduce{ acc, str -> "$acc, $str" }
+  println("reduced: $reduced2")
+  println("${strings.joinToString(",")}")
+
+  println()
+
+  var reduced3 = strings.reduceRight{ str, acc -> "$acc,$str" }
+  println("reduced3: $reduced3")
 }
