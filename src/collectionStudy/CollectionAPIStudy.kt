@@ -40,8 +40,8 @@ fun main() {
 
   println()
 
-  var discountProduct = productList.map { it.name }
-  println(discountProduct)
+  var discountProducts = productList.map { it.name }
+  println(discountProducts)
 
   var discountPrices = productList.map{ it.price - (it.discountRate * it.price) }
   println(discountPrices)
@@ -108,4 +108,17 @@ fun main() {
   println()
   var personAgeOver30 = personList.count{ it.age >=30 }
   println("personAgeOver30: $personAgeOver30")
+
+  println()
+
+  var discountProductsWithPrice = discountProducts.zip(discountPrices)
+  println(discountProductsWithPrice)
+
+  println()
+
+  var discountProductsWithPrice2 = discountProducts.zip(discountPrices) {
+    prod, price ->
+    mapOf("name" to prod, "price" to price)
+  }
+  println(discountProductsWithPrice2)
 }
