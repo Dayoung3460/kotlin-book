@@ -23,5 +23,14 @@ fun main() {
   println(Date(lastModified))
   println(f1.exists())
   f1.delete()
+
+  println()
+
+  val f2 = File("file2.txt")
+  if(f2.createNewFile()) {
+    f2.writeText("Hello")
+  } else {
+    f2.appendText("\nWorld")
+  }
 }
 
