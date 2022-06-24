@@ -1,5 +1,7 @@
 package collectionStudy
 
+import kotlin.math.floor
+
 data class Person(var name: String, var gender: String, var age: Int)
 data class Account(val id: String, var person: Person)
 data class Product(var name: String, var price: Double, var discountRate: Double)
@@ -129,5 +131,12 @@ fun main() {
 
   var mapByGenderKey = accountList.associate{ it.person.gender to it.person }
   println(mapByGenderKey)
+
+  println()
+
+  var grouped = productList.groupBy {
+    floor(it.price / 1000)
+  }
+  println(grouped)
 
 }
