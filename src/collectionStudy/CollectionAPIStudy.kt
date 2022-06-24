@@ -139,4 +139,11 @@ fun main() {
   }
   println(grouped)
 
+  println()
+
+  var distinct1 = listOf(1, 2, 1, 2, 3, 3, ).distinct()
+  var distinct2 = listOf('a', 'b', 'c', 'a', 'c').distinct()
+  println(distinct1)
+  println(distinct2)
+
 }
