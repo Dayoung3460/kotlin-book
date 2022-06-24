@@ -32,5 +32,7 @@ fun main() {
   } else {
     f2.appendText("\nWorld")
   }
+
+//  f2.delete()
 }
 
