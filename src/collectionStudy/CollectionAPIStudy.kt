@@ -121,4 +121,13 @@ fun main() {
     mapOf("name" to prod, "price" to price)
   }
   println(discountProductsWithPrice2)
+
+  println()
+
+  var mapByIdKey = accountList.associate{ it.id to it.person }
+  println(mapByIdKey)
+
+  var mapByGenderKey = accountList.associate{ it.person.gender to it.person }
+  println(mapByGenderKey)
+
 }
