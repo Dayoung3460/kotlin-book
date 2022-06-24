@@ -104,4 +104,8 @@ fun main() {
 
   var reduced3 = strings.reduceRight{ str, acc -> "$acc,$str" }
   println("reduced3: $reduced3")
+
+  println()
+  var personAgeOver30 = personList.count{ it.age >=30 }
+  println("personAgeOver30: $personAgeOver30")
 }
