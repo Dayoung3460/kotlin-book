@@ -13,36 +13,41 @@ fun main() {
   val month = today.month.value
   val day = today.dayOfMonth
 
-  var content = ""
+//  var content = ""
   var diaryFile = File("diary_$year-$month-$day.txt")
-  diaryFile.createNewFile()
-  while (true) {
-    print("> ")
-    val line = readLine()
+  if(diaryFile.exists()) {
+    val content = diaryFile.readText()
+    println(content)
+  } else {
+    diaryFile.createNewFile()
+    while (true) {
+      print("> ")
+      val line = readLine()
 
-    if(line == "/quit") {
-      val diary = Diary(content)
-      val oos = ObjectOutputStream(FileOutputStream(diaryFile))
-      oos.writeObject(diary)
-      oos.flush()
-      oos.close()
-      break
-    }
-    if(line == "/clear") {
-      content = ""
-    } else {
-      content += "$line\n"
-      println("\"$line\" entered.")
-    }
+  //    if(line == "/quit") {
+  //      val diary = Diary(content)
+  //      val oos = ObjectOutputStream(FileOutputStream(diaryFile))
+  //      oos.writeObject(diary)
+  //      oos.flush()
+  //      oos.close()
+  //      break
+  //    }
+  //    if(line == "/clear") {
+  //      content = ""
+  //    } else {
+  //      content += "$line\n"
+  //      println("\"$line\" entered.")
+  //    }
 
-//    if(line == "/quit") break
-//    if(line == "/clear") {
-//      diaryFile.writeText("")
-//    } else {
-////      !! will throw NullPointerException if the value is null
-//      diaryFile.appendText("${line!!}\n")
-//      println("\"$line\" entered.")
-//    }
+      if(line == "/quit") break
+      if(line == "/clear") {
+        diaryFile.writeText("")
+      } else {
+  //      !! will throw NullPointerException if the value is null
+        diaryFile.appendText("${line!!}\n")
+        println("\"$line\" entered.")
+      }
+    }
   }
 
 }
